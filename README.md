@@ -1,7 +1,7 @@
 # microservices-dmp
 
 ### **Spring Boot Microservices-dmp**
-This is a Spring Boot project named project-name. It was created using Java 8 and Spring Boot 2.5.x.
+This is a Spring Boot project named microservices-dmp. It was created using Java 18 and Spring Boot 2.5.x.
 
 ### **Prerequisites**
 Before running this application, make sure you have installed the following:
