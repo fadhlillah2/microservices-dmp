@@ -1,10 +1,10 @@
 # microservices-dmp
 
-**Spring Boot Microservices-dmp**
+### **Spring Boot Microservices-dmp**
 
 This is a Spring Boot project named project-name. It was created using Java 8 and Spring Boot 2.5.x.
 
-**Prerequisites**
+### **Prerequisites**
 
 Before running this application, make sure you have installed the following:
 
@@ -12,12 +12,12 @@ Before running this application, make sure you have installed the following:
 - Maven
 - Docker (recommended)
 
-**Getting started**
+### **Getting started**
 
 - To get started, clone this repository to your local machine
 - Then, navigate to the project directory:
 
-**Running the application**
+### **Running the application**
 
 To run the application, use the following command:
 - locally:
@@ -25,10 +25,10 @@ To run the application, use the following command:
 - using docker:
 `make start`
 
-**Accessing the application**
+### **Accessing the application**
 
 Once the application is running, you can access it by visiting http://localhost:8085 in your web browser.
 
-**Contributing**
+### **Contributing**
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request.
