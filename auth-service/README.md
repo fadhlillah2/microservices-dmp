@@ -27,11 +27,16 @@ psql postgres
 
 ### Command drop a database
 
-create database user_service;
+drop database user_service;
 
 ### Command create a database
 
 create database user_service;
+
+
+### Running application using CLI 
+
+java --add-opens java.base/java.util=ALL-UNNAMED -jar auth-service-0.0.1-SNAPSHOT.jar 
 
 
 
