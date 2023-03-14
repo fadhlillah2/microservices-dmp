@@ -1,5 +1,3 @@
-# Link
-https://www.danvega.dev/blog/2022/09/06/spring-security-jwt/
 
 # create rsa key pair
 openssl genrsa -out keypair.pem 2048
