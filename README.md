@@ -5,13 +5,13 @@ Spring Boot Microservices-dmp
 Prerequisites
 Before running this application, make sure you have installed the following:
 
--Java 8 or higher
--Maven
--Docker (recommended)
+- Java 8 or higher
+- Maven
+- Docker (recommended)
 
 Getting started
--To get started, clone this repository to your local machine
--Then, navigate to the project directory:
+- To get started, clone this repository to your local machine
+- Then, navigate to the project directory:
 
 Running the application
 To run the application, use the following command:
