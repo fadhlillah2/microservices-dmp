@@ -1,4 +1,4 @@
-APP_IMAGE_LIST ?= product-service person-service cache-redis-db
+APP_IMAGE_LIST ?= auth-service
 
 start : down remove up
 

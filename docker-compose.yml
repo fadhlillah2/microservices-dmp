@@ -1,83 +1,35 @@
 version: '3'
 
 services:
-  product-service:
+  auth-service:
     #    platform: 'linux/amd64'
-    image: 'product-service:latest'
-    container_name: product-service
+    image: 'auth-service:latest'
+    container_name: auth-service
     build:
-      context: product-service
+      context: auth-service
       dockerfile: Dockerfile
     depends_on:
-      - product-db
-#      - cache-redis-db
+      - auth-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://product-db:5432/product_db
-      - SPRING_DATASOURCE_USERNAME=product_db
-      - SPRING_DATASOURCE_PASSWORD=product_db
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://auth-db:5432/auth_db
+      - SPRING_DATASOURCE_USERNAME=auth_db
+      - SPRING_DATASOURCE_PASSWORD=auth_db
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SERVER_PORT=8081
-#      - spring.redis.host=cache-redis-db
-#      - spring.redis.port=6379
-#      - REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      - SERVER_PORT=8085
     expose:
-      - "8081"
+      - "8085"
     ports:
-      - "8081:8081"
-  product-db:
+      - "8085:8085"
+  auth-db:
     image: 'postgres:15-alpine'
-    container_name: product-db
+    container_name: auth-db
     environment:
-      - POSTGRES_USER=product_db
-      - POSTGRES_PASSWORD=product_db
-      - POSTGRES_DB=product_db
+      - POSTGRES_USER=auth_db
+      - POSTGRES_PASSWORD=auth_db
+      - POSTGRES_DB=auth_db
     volumes:
-      - product_db:/var/lib/postgresql/data
+      - auth_db:/var/lib/postgresql/data
     ports:
       - "5439:5432"
-  cache-redis-db:
-    image: redis:6.2-alpine
-    container_name: cache-redis-db
-    restart: always
-    ports:
-      - '6379:6379'
-    volumes:
-      - cache_redis_db:/data
-  person-service:
-    #    platform: 'linux/amd64'
-    image: 'person-service:latest'
-    container_name: person-service
-    build:
-      context: person-service
-      dockerfile: Dockerfile
-    depends_on:
-      - person-db
-      - cache-redis-db
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://person-db:5432/person_db
-      - SPRING_DATASOURCE_USERNAME=person_db
-      - SPRING_DATASOURCE_PASSWORD=person_db
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SERVER_PORT=8082
-      - spring.redis.host=cache-redis-db
-      - spring.redis.port=6379
-      - REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
-    expose:
-      - "8082"
-    ports:
-      - "8082:8082"
-  person-db:
-    image: 'postgres:15-alpine'
-    container_name: person-db
-    environment:
-      - POSTGRES_USER=person_db
-      - POSTGRES_PASSWORD=person_db
-      - POSTGRES_DB=person_db
-    volumes:
-      - person_db:/var/lib/postgresql/data
-    ports:
-      - "5440:5432"
 volumes:
-  product_db:
-  cache_redis_db:
-  person_db:
+  auth_db:

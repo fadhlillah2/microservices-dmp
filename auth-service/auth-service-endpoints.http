@@ -1,0 +1,28 @@
+POST localhost:8085/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "username" : "aby",
+  "email" : "fadhlillah949699@gmail.com",
+  "password" : "Fadhli12345?",
+  "name" : "Fadhlillah",
+  "role" : "admin"
+}
+
+###
+
+POST localhost:8085/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username" : "aby",
+  "password" : "Fadhli12345?"
+}
+
+> {%
+client.global.set("token", response.body.data);
+%}
+###
+
+GET localhost:8085/api/v1/auth/all-users
+Authorization: Bearer {{token}}
