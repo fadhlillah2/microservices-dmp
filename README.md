@@ -22,7 +22,7 @@ To run the application, use the following command:
 `make start`
 
 ### **Accessing the application**
-Once the application is running, you can access it by visiting http://localhost:8085 in your web browser.
+Once the application is running, you can access it by visiting http://localhost:8085 in your web browser
 
 ### **Contributing**
 If you'd like to contribute to this project, please fork the repository and submit a pull request.
